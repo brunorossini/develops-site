@@ -1,4 +1,4 @@
-const siteMetadata = require("./config/metadata")
+const siteMetadata = require('./config/metadata')
 
 module.exports = {
   siteMetadata,
@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: process.env.NODE_ENV !== "production",
+        displayName: process.env.NODE_ENV !== 'production',
       },
     },
     {
@@ -51,6 +51,13 @@ module.exports = {
         path: `${__dirname}/src/pages`,
         ignore: [`**/styles.(js)`],
         options: { nocase: true },
+      },
+    },
+    `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-plugin-netlify-cache',
+      options: {
+        cachePublic: true,
       },
     },
     `gatsby-plugin-react-helmet`, //pesquisar sobre
